@@ -20,8 +20,8 @@ electronics.AddCategory(laptop);
 electronics.AddProduct(phone);
 groceries.AddProduct(apple);
 
-UserManager userManager = new();
-Admin admin = new(1, "admin", 30, "+99450", "admin1@gmail.com", "password", "role1");
+UserManager userManager = new(1, "Admin1", 28, "+99451", "admin1@gmail.com", "admin12", "role0");
+Admin admin = new(1, "Admin", 30, "+99450", "admin1@gmail.com", "password", "role1");
 userManager.AddUser(admin);
 
 Seller seller = new Seller(2, "Seller1", 25, "+994", "seller1@gmail.com", "password", "role2");

@@ -13,7 +13,6 @@ namespace MarketCRM.Business
         }
         public void ListProducts()
         {
-            //burda kodlar duz deyil axi
             foreach (Product item in products)
             {
                 if (item.Id == products.id)
@@ -25,6 +24,7 @@ namespace MarketCRM.Business
         public ProductManager(int id, string name, double price, string category) 
             : base(id, name, price, category)
         {
+           
         }
     }
 }
