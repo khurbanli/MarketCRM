@@ -1,4 +1,4 @@
-﻿namespace MarketCRM.Entity
+﻿namespace MarketCRM.Concrete
 {
     internal class Product 
     {

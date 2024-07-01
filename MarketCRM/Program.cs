@@ -1,6 +1,6 @@
 ﻿using MarketCRM;
 using MarketCRM.Business;
-using MarketCRM.Entity;
+using MarketCRM.Concrete;
 
 CategoriyaManager categoryManager = new(1, "Cateqory");
 Categoriya electronics = new(1, "Electronics");

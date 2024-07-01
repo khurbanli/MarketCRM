@@ -1,4 +1,4 @@
-﻿using MarketCRM.Entity;
+﻿using MarketCRM.Concrete;
 
 namespace MarketCRM.Business
 {
