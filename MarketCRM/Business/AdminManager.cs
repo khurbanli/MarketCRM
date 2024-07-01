@@ -1,4 +1,6 @@
-﻿namespace MarketCRM.Business
+﻿using MarketCRM.Concrete;
+
+namespace MarketCRM.Business
 {
     internal class AdminManager : UserManager
     {

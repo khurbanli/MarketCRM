@@ -1,6 +1,4 @@
-﻿using MarketCRM.Concrete;
-
-namespace MarketCRM
+﻿namespace MarketCRM.Concrete
 {
     internal class Seller : User
     {
@@ -11,7 +9,7 @@ namespace MarketCRM
         {
             Console.WriteLine($"Selling product: {product.ProductName}");
         }
-        public Seller(int iD, string fullName, short age, string number, string email, string password, string role) 
+        public Seller(int iD, string fullName, short age, string number, string email, string password, string role)
             : base(iD, fullName, age, number, email, password, role)
         {
         }
