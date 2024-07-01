@@ -1,6 +1,6 @@
 ﻿namespace MarketCRM.Entity
 {
-    internal class Product
+    internal class Product 
     {
         public int Id { get; set; }
         public string ProductName { get; set; }

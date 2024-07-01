@@ -13,8 +13,14 @@ namespace MarketCRM.Business
         {
             foreach (User user in users)
             {
-                Console.WriteLine(user);
+                if(user != null)
+                users.Add(user);
             }
+        }
+
+        public UserManager(int iD, string fullName, short age, string number, string email, string password, string role)
+            : base(iD, fullName, age, number, email, password, role)
+        {
         }
 
     }

@@ -2,7 +2,7 @@
 
 namespace MarketCRM.Business
 {
-    internal class CategoriyaManager
+    internal class CategoriyaManager : Categoriya
     {
         private List<Categoriya> categories = new List<Categoriya>();
 
@@ -15,8 +15,14 @@ namespace MarketCRM.Business
         {
             foreach (var category in categories)
             {
-                Console.WriteLine(category);
+                if (category != null) 
+                categories.Add(category);
             }
+        }
+
+        public CategoriyaManager(int id, string name) 
+            : base(id, name)
+        {
         }
     }
 }

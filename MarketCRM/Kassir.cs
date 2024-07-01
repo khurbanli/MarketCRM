@@ -7,11 +7,13 @@ namespace MarketCRM
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public Kassir(int id, string name)
+        public void ProcessTransaction()
         {
-            Id = id;
-            Name = name;
+            Console.WriteLine("Processing transaction...");
         }
-
+        public Kassir(int iD, string fullName, short age, string number, string email, string password, string role) 
+            : base(iD, fullName, age, number, email, password, role)
+        {
+        }
     }
 }

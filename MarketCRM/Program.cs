@@ -1,63 +1,49 @@
-﻿
-
-// METODLAR prodaktin, add update deleted getallprodakt  prodact tipinden prodat yazirsan metodun icinde mehsullarin icin gezirsen
-// for la metodu run edende list tipinden prodati oxud prodatkti liste yigin  listi fora sal tek tek oxut
-// prodat . protakt item beraberdi id uygunu tap add hissede
-//  foricle prodatk listinin icin tek tek gezdiz deyirsen itm.id = prodat.id updet. prodat   
+﻿using MarketCRM;
 using MarketCRM.Business;
 using MarketCRM.Entity;
 
+CategoriyaManager categoryManager = new(1, "Cateqory");
+Categoriya electronics = new(1, "Electronics");
+Categoriya groceries = new(2, "Groceries");
+categoryManager.AddCategory(electronics);
+categoryManager.AddCategory(groceries);
 
-//Prodact prodact = new();
+ProductManager productManager = new (1, "Product", 1000.00, "Electronics");
+Product laptop = new Product(1, "Laptop", 1000.00, "electronics");
+Product phone = new Product(2, "Phone", 500.00, "electronics");
+Product apple = new Product(3, "Apple", 100.00, "groceries");
+productManager.AddProduct(laptop);
+productManager.AddProduct(phone);
+productManager.AddProduct(apple);
 
+electronics.AddCategory(laptop);
+electronics.AddProduct(phone);
+groceries.AddProduct(apple);
 
+UserManager userManager = new();
+Admin admin = new(1, "admin", 30, "+99450", "admin1@gmail.com", "password", "role1");
+userManager.AddUser(admin);
 
-ProductManager productManager = new ();
-UserManager userManager = new ();
-CategoriyaManager categoryManager = new ();
+Seller seller = new Seller(2, "Seller1", 25, "+994", "seller1@gmail.com", "password", "role2");
+userManager.AddUser(seller);
 
+Kassir kassir = new(3, "Kassir1", 27, "+99470", "kassir1@gmail.com", "password", "role3");
+userManager.AddUser(kassir);
 
-Product product1 = new Product(1, "Alma", 5.0, "Fruits");
-productManager.AddProduct(product1);
-
-Seller seller1 = new Seller(1, "Aslan Aslanli");
-userManager.AddUser(seller1);
-
-
-Categoriya category1 = new Categoriya(1, "Fruits");
-categoryManager.AddCategory(category1);
-
-Console.WriteLine("Products:");
+//Məhsulların Siyahısı
+Console.WriteLine("Məhsulların ümumi siyahısı:");
 productManager.ListProducts();
 
-// İstifadəçiləri siyahı şəklində konsola yazdırmaq
-Console.WriteLine("\nUsers:");
-userManager.ListUsers();
-
-// Kateqoriyaları siyahı şəklində konsola yazdırmaq
-Console.WriteLine("\nCategories:");
+Console.WriteLine("Kateqoriyalara görə məhsulların siyahısı:");
 categoryManager.ListCategories();
 
+seller.SellProduct(laptop);
+kassir.ProcessTransaction();
 
 List<User> userlist = new List<User>();
 List<Product> productlist = new List<Product>();
-
-User user1 = new()
-{
-    ID = 0,
-    FullName = "User1",
-    Age = 25,
-    Number = "994",
-    Role = "Kassir",
-};
-
-
-
-AdminManager adminManager = new();
-
-UserManager cashier1 = new();
-
-adminManager.AddUser(user1);
+Console.WriteLine(userlist);
+Console.WriteLine(productlist);
 
 
 

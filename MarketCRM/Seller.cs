@@ -7,10 +7,13 @@ namespace MarketCRM
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public Seller(int id, string name)
+        public void SellProduct(Product product)
         {
-            Id = id;
-            Name = name;
+            Console.WriteLine($"Selling product: {product.ProductName}");
+        }
+        public Seller(int iD, string fullName, short age, string number, string email, string password, string role) 
+            : base(iD, fullName, age, number, email, password, role)
+        {
         }
     }
 }
